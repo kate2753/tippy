@@ -12,7 +12,7 @@ class TipViewController: UIViewController {
   
   @IBOutlet weak var tipLabel: UILabel!
   @IBOutlet weak var totalLabel: UILabel!
-  @IBOutlet weak var billfield: UITextField!
+  @IBOutlet weak var billField: UITextField!
   @IBOutlet weak var tipControl: UISegmentedControl!
   
   override func viewWillAppear(animated: Bool) {
@@ -23,7 +23,9 @@ class TipViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    
+    billField.becomeFirstResponder()
   }
   
   override func didReceiveMemoryWarning() {
@@ -39,7 +41,7 @@ class TipViewController: UIViewController {
   @IBAction func calculateTip(sender: AnyObject) {
     let tipPercentages = [0.18, 0.2, 0.25]
     
-    let bill = Double(billfield.text!) ?? 0
+    let bill = Double(billField.text!) ?? 0
     let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
     let total = bill + tip
     
