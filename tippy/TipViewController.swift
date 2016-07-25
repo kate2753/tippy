@@ -18,14 +18,16 @@ class TipViewController: UIViewController {
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
     tipControl.selectedSegmentIndex = UserDefaultSettings.getDefaultTipPercentageIdx()
+    
+    billField.text = String(format: "%.2f", UserDefaultSettings.getBillAmount())
     self.calculateTip(self)
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    
     billField.becomeFirstResponder()
+    
   }
   
   override func didReceiveMemoryWarning() {
@@ -47,6 +49,9 @@ class TipViewController: UIViewController {
     
     tipLabel.text = String(format: "$%.2f", tip)
     totalLabel.text = String(format: "$%.2f", total)
+    
+    // Also remember the bill amount if user comes back to the app within 10 mins
+    UserDefaultSettings.storeBillAmount(bill);
   }
 }
 

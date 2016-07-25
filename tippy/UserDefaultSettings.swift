@@ -9,6 +9,8 @@
 import Foundation
 
 class UserDefaultSettings {
+  private static let billAmountKey = "tippy_bill_amount"
+  private static let billAmountTimestampKey = "tippy_bill_amount_ts"
   private static let defaultPercentageStorageKey = "tippy_default_percentage_idx"
   static let defaultPercentageInitialIndex = 1
   
@@ -22,5 +24,27 @@ class UserDefaultSettings {
     let userDefaults = NSUserDefaults.standardUserDefaults()
     userDefaults.setInteger(defaultPercentage, forKey: defaultPercentageStorageKey)
     userDefaults.synchronize()
+  }
+  
+  static func storeBillAmount(bill: Double) {
+    let currentTimestamp = NSDate()
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    userDefaults.setDouble(bill, forKey: billAmountKey)
+    userDefaults.setObject(currentTimestamp, forKey: billAmountTimestampKey)
+    userDefaults.synchronize()
+  }
+  
+  static func getBillAmount() -> Double {
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let billAmountTimestamp = userDefaults.objectForKey(billAmountTimestampKey)
+    let billAmount = userDefaults.doubleForKey(billAmountKey)
+
+    // timeIntervalSinceNow will be negative seconds, because billAmountTimestamp is earlier than current timestamp
+    // so we want to return saved bill amount if billAmountTimestamp is less than 10 mins ago
+    if billAmountTimestamp?.timeIntervalSinceNow >= 10 * 60 * -1 {
+      return billAmount
+    } else {
+      return 0
+    }
   }
 }
