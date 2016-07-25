@@ -47,11 +47,18 @@ class TipViewController: UIViewController {
     let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
     let total = bill + tip
     
-    tipLabel.text = String(format: "$%.2f", tip)
-    totalLabel.text = String(format: "$%.2f", total)
+    tipLabel.text = formatCurrency(tip)
+    totalLabel.text = formatCurrency(total)
     
     // Also remember the bill amount if user comes back to the app within 10 mins
     UserDefaultSettings.storeBillAmount(bill);
+  }
+  
+  func formatCurrency(amount: Double) -> String {
+    let formatter = NSNumberFormatter()
+    formatter.numberStyle = .CurrencyStyle
+    formatter.locale = NSLocale.currentLocale()
+    return formatter.stringFromNumber(amount)!
   }
 }
 
