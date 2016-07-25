@@ -25,6 +25,9 @@ Here's a walkthrough of implemented user stories:
 
 <img src='http://g.recordit.co/w5tSuIkcH0.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+Locale specific currency formatting:
+
+<img src='https://dl.dropboxusercontent.com/u/36664861/Screen%20Shot%202016-07-25%20at%2012.02.15%20PM.png' title='Locale specific currency formatting' width='' alt='Video Walkthrough' />
 
 ## License
 
