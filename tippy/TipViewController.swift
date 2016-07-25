@@ -17,8 +17,9 @@ class TipViewController: UIViewController {
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
+
+    ThemeManager().applyTheme(self.view);
     tipControl.selectedSegmentIndex = UserDefaultSettings.getDefaultTipPercentageIdx()
-    
     billField.text = String(format: "%.2f", UserDefaultSettings.getBillAmount())
     self.calculateTip(self)
   }
@@ -27,7 +28,6 @@ class TipViewController: UIViewController {
     super.viewDidLoad()
     
     billField.becomeFirstResponder()
-    
   }
   
   override func didReceiveMemoryWarning() {

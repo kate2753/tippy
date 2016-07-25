@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5635AB41D46C75700FDC81C /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5635AB31D46C75700FDC81C /* ThemeManager.swift */; };
 		C5E8FC4D1D3C93930050B0CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8FC4C1D3C93930050B0CA /* AppDelegate.swift */; };
 		C5E8FC4F1D3C93930050B0CA /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8FC4E1D3C93930050B0CA /* TipViewController.swift */; };
 		C5E8FC521D3C93930050B0CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5E8FC501D3C93930050B0CA /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C5635AB31D46C75700FDC81C /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		C5E8FC491D3C93930050B0CA /* tippy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tippy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5E8FC4C1D3C93930050B0CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5E8FC4E1D3C93930050B0CA /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				C5E8FC551D3C93930050B0CA /* LaunchScreen.storyboard */,
 				C5E8FC581D3C93930050B0CA /* Info.plist */,
 				C5E8FC7C1D3E86450050B0CA /* UserDefaultSettings.swift */,
+				C5635AB31D46C75700FDC81C /* ThemeManager.swift */,
 			);
 			path = tippy;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			files = (
 				C5E8FC4F1D3C93930050B0CA /* TipViewController.swift in Sources */,
 				C5E8FC7D1D3E86450050B0CA /* UserDefaultSettings.swift in Sources */,
+				C5635AB41D46C75700FDC81C /* ThemeManager.swift in Sources */,
 				C5E8FC4D1D3C93930050B0CA /* AppDelegate.swift in Sources */,
 				C5E8FC7B1D3E7E9D0050B0CA /* SettingsViewController.swift in Sources */,
 			);

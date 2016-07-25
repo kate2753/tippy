@@ -9,10 +9,13 @@
 import Foundation
 
 class UserDefaultSettings {
+  private static let isDarkThemeKey = "tippy_theme"
+  static let theme_dark = "dark"
+  static let theme_light = "light"
   private static let billAmountKey = "tippy_bill_amount"
   private static let billAmountTimestampKey = "tippy_bill_amount_ts"
   private static let defaultPercentageStorageKey = "tippy_default_percentage_idx"
-  static let defaultPercentageInitialIndex = 1
+  private static let defaultPercentageInitialIndex = 1
   
   static func getDefaultTipPercentageIdx() -> Int {
     let userDefaults = NSUserDefaults.standardUserDefaults()
@@ -46,5 +49,16 @@ class UserDefaultSettings {
     } else {
       return 0
     }
+  }
+  
+  static func storeIsDarkTheme(isDarkTheme: Bool) {
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    userDefaults.setBool(isDarkTheme, forKey: isDarkThemeKey)
+  }
+
+  
+  static func getIsDarkTheme() -> Bool {
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    return userDefaults.boolForKey(isDarkThemeKey)
   }
 }
